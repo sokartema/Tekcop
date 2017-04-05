@@ -17,6 +17,17 @@
   },
   "homepage": "https://github.com/sokartema/Tekcop#readme",
   "dependencies": {
-    "node-sass": "^4.5.2"
+    "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-browserify": "^5.0.0",
+    "grunt-sass": "^2.0.0"
   }
 }

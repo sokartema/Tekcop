@@ -1,4 +1,4 @@
-const {app, BrowserWindow, globalShortcut, dialog} = require('electron');
+const { app, BrowserWindow, globalShortcut, dialog } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -6,40 +6,41 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 600, height: 600, title: "Tekcop", icon: path.join(__dirname, 'images', 'logo.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#FFA974"});
 
+  win = new BrowserWindow({ width: 600, height: 600, title: "Tekcop", show: false, icon: path.join(__dirname, 'images', 'logo2.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#00242B" });
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'views', 'login.html'),
     protocol: 'file:',
     slashes: true
   }));
 
-  globalShortcut.register('Alt+Q', ()=>{
+  globalShortcut.register('Alt+Q', () => {
 
     app.quit();
 
   });
 
-  globalShortcut.register('Alt+W', ()=>{
+  globalShortcut.register('Alt+W', () => {
 
-    dialog.showOpenDialog({buttonLabel: "Confirmar", properties: ['openFile', 'openDirectory', 'multiSelections', 'showHiddenFiles']}, (files)=>{
-
-    });
+    win.webContents.openDevTools({ mode: "undocked" });
 
   });
 
-  globalShortcut.register('Alt+E', ()=>{
+  globalShortcut.register('Alt+E', () => {
 
-    dialog.showErrorBox("Bad Key", "Error chungo bro!");
+
+    win.webContents.closeDevTools();
 
   });
 
+  win.on('ready-to-show', () => {
 
-  // Open the DevTools.
-  //win.webContents.openDevTools();
+    win.show();
+
+  });
 
   // Emitted when the window is closed.
   win.on('closed', () => {

@@ -5,10 +5,22 @@ module.exports = function (grunt) {
         browserify: {
             dist: {
                 options: {
-                    transform: [['babelify', { presets: ['react'] }]]
+                    transform: [['babelify', { presets: ['react'] }]],
+                    browserifyOptions: {
+                        ignoreMissing: true,
+                        debug: true
+                    }
+
                 },
-                src: ['src/js/**/index.js'],
-                dest: 'build/js/login.js',
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/js/',
+                        src: ['login/index.js'],
+                        dest: 'build/js/'
+                    }
+                ]
+
             }
         },
         sass: {

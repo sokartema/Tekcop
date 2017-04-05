@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut, dialog } = require('electron');
+const { app, BrowserWindow, globalShortcut, dialog, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -50,6 +50,12 @@ function createWindow() {
     win = null;
   });
 }
+
+ipcMain.on('canal1', (event, arg) => {
+
+  console.log(arg);
+
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

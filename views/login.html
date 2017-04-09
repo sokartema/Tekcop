@@ -4,25 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../build/css/login.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../build/css/login/login.css">
 
 </head>
 
 <body>
   <div class="container">
     <div class="row">
+      <a class="item-close" id="close">
+        <i class="fa fa-close" title="Close"></i>
+      </a>
+      <a class="item-minimize" id="minimize" >
+        <i class="fa fa-window-minimize" title="Minimize"></i>
+      </a>
+    </div>
+    <div class="row">
       <div class="col-md-12">
         <img src="../images/logo1.png" class="img-responsive logo" alt="Logo">
       </div>
       <div class="col-md-12">
-        <div id="react-form"></div>
-        <button id="alert" class="btn custom"> Alerta </button>
+        <div id="react-login"></div>
       </div>
     </div>
 
   </div>
-  
-  
+
+
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../build//js/login/index.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

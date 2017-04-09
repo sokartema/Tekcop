@@ -1,15 +1,21 @@
-const { app, BrowserWindow, globalShortcut, dialog, ipcMain } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain, session } = require('electron');
 const path = require('path');
 const url = require('url');
+const request = require('request');
+const Q = require('q');
+
+
+const authLogin = require('./js/auth-window')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
+
 function createWindow() {
   // Create the browser window.
 
-  win = new BrowserWindow({ width: 600, height: 600, title: "Tekcop", show: false, icon: path.join(__dirname, 'images', 'logo2.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#00242B" });
+  win = new BrowserWindow({ width: 400, height: 400, title: "Tekcop", show: false, icon: path.join(__dirname, 'images', 'logo2.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#00242B" });
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'views', 'login.html'),
@@ -36,12 +42,12 @@ function createWindow() {
 
   });
 
-  win.on('ready-to-show', () => {
+  ipcMain.on('didMount', (event, arg) => {
 
     win.show();
 
   });
-
+  
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
@@ -51,9 +57,27 @@ function createWindow() {
   });
 }
 
-ipcMain.on('canal1', (event, arg) => {
 
-  console.log(arg);
+
+
+
+ipcMain.on('login', (event, arg) => {
+
+  authLogin(event, win);
+
+
+});
+
+ipcMain.on('close', (event, arg) => {
+
+  win.close();
+
+});
+
+
+ipcMain.on('minimize', (event, arg) => {
+
+  win.minimize();
 
 });
 
@@ -61,6 +85,7 @@ ipcMain.on('canal1', (event, arg) => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {

@@ -3,21 +3,18 @@ const ReactDOM = require('react-dom');
 const $ = require('jQuery');
 const {ipcRenderer} = require('electron');
 
-const RegisterView = require('./register-view');
+const LoginView = require('./login-view');
 
-const newRegister = {
+ReactDOM.render(<LoginView/> , document.getElementById('react-login'));
 
-  email: "",
-  name: "",
-  surname: "",
-  password: "",
-  confirmPassword: ""
-}
+$('#close').click(()=>{
 
-ReactDOM.render(<RegisterView newRegister={newRegister}/>, document.getElementById('react-form'));
+    ipcRenderer.send('close', 'close');
 
-$('#alert').click(() => {
+});
 
-  ipcRenderer.send('canal1', 'hey');
+$('#minimize').click(()=>{
+
+    ipcRenderer.send('minimize', 'minimize');
 
 });

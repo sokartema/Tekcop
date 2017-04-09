@@ -16,7 +16,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'src/js/',
-                        src: ['login/index.js'],
+                        src: ['**/index.js'],
                         dest: 'build/js/'
                     }
                 ]
@@ -28,7 +28,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/scss/',
-                    src: ['*.scss'],
+                    src: ['**/*.scss'],
                     dest: 'build/css',
                     ext: '.css'
                 }]

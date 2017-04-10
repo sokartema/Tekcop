@@ -1,0 +1,147 @@
+$background-color: #00242B;
+
+
+body{
+
+  background-color: $background-color;
+  overflow: hidden;
+}
+
+
+a.item-close{
+
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    color: #9f9f9f;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 9px;
+    right: 12px;
+    font-size: 18px;
+}
+
+  a.item-close:hover, a.item-close:focus, a.item-close:active{
+
+    border: none;
+    color:#fff;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: inherit;
+    transition: color 0.5s;
+ }
+
+  a.item-minimize{
+
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    color: #9f9f9f;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 8px;
+    right: 70px;
+    font-size: 14px;
+    top: 2px;
+ }
+
+  a.item-minimize:hover, a.item-minimize:focus, a.item-minimize:active{
+
+    border: none;
+    color:#fff;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: inherit;
+    transition: color 0.5s;
+}
+
+
+  a.item-maximize{
+
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    color: #9f9f9f;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 8px;
+    right: 40px;
+    font-size: 14px;
+    top: 3px;
+ }
+
+  a.item-maximize:hover, a.item-maximize:focus, a.item-maximize:active{
+
+    border: none;
+    color:#fff;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: inherit;
+    transition: color 0.5s;
+}
+
+
+div.side-menu{
+
+    height: 100vh;
+    width: 50px;
+    margin-top: 4px;
+    z-index: 1;
+    background-color: #F05768;
+    box-shadow: 0 1px 2px 3px #00212B, 0 0 0 0px #00212B;
+    border-top: 1px #b04450 solid;
+
+}
+
+button.side-menu-button{
+
+    width: 50px;
+    height: 90px;
+    background-color: #F05768;
+    color: white;
+    border: none;
+    outline: none !important;
+    user-select: none;
+    cursor: pointer;
+    border-bottom: 1px #b04450 solid;
+    font-size: 16px;
+
+}
+
+button.side-menu-button:focus, button.side-menu-button:active, button.side-menu-button:hover {
+
+    background-color: #b04450;
+    transition: color 1s;
+
+}
+
+div.toolbar{
+
+    height: 40px;
+    -webkit-app-region: drag;
+    background-color: #00212B;
+    z-index: 2;
+    box-shadow: 0 2px 4px 0 #00212B, 0 0 0 3px #00212B;
+}
+
+p.user{
+
+    -webkit-app-region: no-drag;
+    background-color: transparent;
+    color: #9f9f9f;
+    -webkit-user-select: none;
+    user-select: none;
+    position: absolute;
+    margin-top: 10px;
+    left: 15px;
+    font-weight: bold;
+    cursor: default;
+    font-size: 17px;
+}
+

@@ -4,11 +4,13 @@ const Q = require('q');
 
 let log;
 
+const mainWindow = require('./main-window');
+
 const loginConfig = require('../config/login.json');
 
-function authLogin(event, win) {
+function authLogin(event, parentWin) {
 
-  log = new BrowserWindow({ width: 600, height: 600, parent: win, show: false, webPreferences: { webSecurity: false, nodeIntegration: false } });
+  log = new BrowserWindow({ width: 600, height: 600, parent: parentWin, show: false, webPreferences: { webSecurity: false, nodeIntegration: false } });
 
   let data = {
     "consumer_key": loginConfig.consumer_key,
@@ -70,7 +72,7 @@ function authLogin(event, win) {
       if (url.trim() === "http://localhost") {
         d.resolve();
 
-      } 
+      }
 
     });
 
@@ -80,7 +82,7 @@ function authLogin(event, win) {
 
         d.resolve();
 
-      } 
+      }
 
     });
 
@@ -142,20 +144,23 @@ function authLogin(event, win) {
 
     const cookie = { url: 'https://getpocket.com/', username: username, token: token }
     session.defaultSession.cookies.set(cookie, (error) => {
-      if (error){
+      if (error) {
         console.error(error);
-      }else{
+      } else {
         d.resolve();
       }
     });
 
     return d.promise;
 
-  }).then(()=>{
+  }).then(() => {
 
     var d = Q.defer();
 
-    event.sender.send('asynchronous-reply', 'pong');
+    mainWindow(parentWin);
+
+    d.resolve();
+
     return d.promise;
 
 
@@ -169,10 +174,10 @@ function authLogin(event, win) {
   }).done();
 
 
-   log.on('closed', () => {
-  
+  log.on('closed', () => {
+
     log = null;
-    
+
   });
 
 

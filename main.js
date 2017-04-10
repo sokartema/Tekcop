@@ -15,7 +15,7 @@ let win;
 function createWindow() {
   // Create the browser window.
 
-  win = new BrowserWindow({ width: 400, height: 400, title: "Tekcop", show: false, icon: path.join(__dirname, 'images', 'logo2.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#00242B" });
+  win = new BrowserWindow({ width: 400, height: 400, title: "Tekcop", show: false, icon: path.join(__dirname, 'images', 'logo2.png'), fullscreenable: false, resizable: false, frame: false, autoHideMenuBar: true, backgroundColor: "#141518" });
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'views', 'login.html'),

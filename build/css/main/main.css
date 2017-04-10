@@ -1,5 +1,5 @@
 body {
-  background-color: #00242B;
+  background-color: #141518;
   overflow: hidden; }
 
 a.item-close {
@@ -73,7 +73,7 @@ div.side-menu {
   margin-top: 4px;
   z-index: 1;
   background-color: #F05768;
-  box-shadow: 0 1px 2px 3px #00212B, 0 0 0 0px #00212B;
+  box-shadow: 0px 2px 1px 1px #F05768, 0 0 0 0px #F05768;
   border-top: 1px #b04450 solid; }
 
 button.side-menu-button {
@@ -95,9 +95,9 @@ button.side-menu-button:focus, button.side-menu-button:active, button.side-menu-
 div.toolbar {
   height: 40px;
   -webkit-app-region: drag;
-  background-color: #00212B;
+  background-color: #34373c;
   z-index: 2;
-  box-shadow: 0 2px 4px 0 #00212B, 0 0 0 3px #00212B; }
+  box-shadow: 0 2px 4px 0 #34373c, 0 0 0 3px #34373c; }
 
 p.user {
   -webkit-app-region: no-drag;

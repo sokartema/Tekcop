@@ -9,7 +9,7 @@ let win;
 function mainWindow(parentWin) {
 
 
-    win = new BrowserWindow({ width: 800, height: 600, title: "Tekcop", show: true, icon: path.join(__dirname, '..', 'images', 'logo2.png'), frame: false, autoHideMenuBar: true, backgroundColor: "#00242B" });
+    win = new BrowserWindow({ width: 800, height: 600, title: "Tekcop", show: true, icon: path.join(__dirname, '..', 'images', 'logo2.png'), frame: false, autoHideMenuBar: true, backgroundColor: "#141518" });
 
     win.loadURL(url.format({
         pathname: path.join(__dirname, '..', 'views', 'main.html'),

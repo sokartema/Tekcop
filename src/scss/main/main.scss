@@ -118,7 +118,7 @@ button.side-menu-button{
 button.side-menu-button:focus, button.side-menu-button:active, button.side-menu-button:hover {
 
     background-color: #b04450;
-    transition: color 1s;
+    color: #c5c5c5;
 
 }
 
@@ -144,5 +144,13 @@ p.user{
     font-weight: bold;
     cursor: default;
     font-size: 17px;
+}
+
+
+button.selected{
+
+    background-color: #b04450;
+    color: #c5c5c5;
+
 }
 

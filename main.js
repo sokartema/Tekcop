@@ -23,24 +23,6 @@ function createWindow() {
     slashes: true
   }));
 
-  globalShortcut.register('Alt+Q', () => {
-
-    app.quit();
-
-  });
-
-  globalShortcut.register('Alt+W', () => {
-
-    win.webContents.openDevTools({ mode: "undocked" });
-
-  });
-
-  globalShortcut.register('Alt+E', () => {
-
-
-    win.webContents.closeDevTools();
-
-  });
 
   ipcMain.on('didMount', (event, arg) => {
 
@@ -50,10 +32,9 @@ function createWindow() {
   
   // Emitted when the window is closed.
   win.on('closed', () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
+
     win = null;
+
   });
 }
 

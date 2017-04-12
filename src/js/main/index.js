@@ -4,6 +4,18 @@ const $ = require('jQuery');
 const {ipcRenderer} = require('electron');
 
 
+const MainContainer = require('./main-container');
+
+
+function changeMenu(index){
+
+    ReactDOM.render(<MainContainer indexMenu={index} />, document.getElementById('react-main'));
+
+}
+
+changeMenu(0);
+
+
 $('#close').click(()=>{
 
     ipcRenderer.send('close-main', 'close');
@@ -22,3 +34,23 @@ $('#minimize').click(()=>{
     ipcRenderer.send('minimize-main', 'minimize');
 
 });
+
+
+var arr = $('.side-menu-button');
+
+
+
+arr.each(function(index, element){
+
+    $(element).click(function(){
+
+        $('.side-menu-button.selected').removeClass('selected');
+
+        $(element).addClass('selected');
+
+        changeMenu(index);
+
+
+    });
+
+})

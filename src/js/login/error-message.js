@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 class ErrorMessage extends React.Component{
 
@@ -28,7 +29,7 @@ class ErrorMessage extends React.Component{
 
 ErrorMessage.PropTypes = {
 
-    error: React.PropTypes.object.isRequired
+    error: PropTypes.object.isRequired
 
 }
 

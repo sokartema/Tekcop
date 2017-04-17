@@ -1,19 +1,13 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const $ = require('jQuery');
-const {ipcRenderer} = require('electron');
+const {ipcRenderer} = nodeRequire('electron');
 
 
 const MainContainer = require('./main-container');
 
 
-function changeMenu(index){
+ReactDOM.render(<MainContainer indexMenu={0} />, document.getElementById('react-main'));
 
-    ReactDOM.render(<MainContainer indexMenu={index} />, document.getElementById('react-main'));
-
-}
-
-changeMenu(0);
 
 
 $('#close').click(()=>{
@@ -35,22 +29,3 @@ $('#minimize').click(()=>{
 
 });
 
-
-var arr = $('.side-menu-button');
-
-
-
-arr.each(function(index, element){
-
-    $(element).click(function(){
-
-        $('.side-menu-button.selected').removeClass('selected');
-
-        $(element).addClass('selected');
-
-        changeMenu(index);
-
-
-    });
-
-})

@@ -9,7 +9,9 @@ module.exports = function (grunt) {
                     browserifyOptions: {
                         ignoreMissing: true,
                         debug: true
-                    }
+                    },
+                    exclude: ['electron']
+
 
                 },
                 files: [

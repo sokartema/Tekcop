@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const $ = require('jQuery');
-const {ipcRenderer} = require('electron');
+const {ipcRenderer} = nodeRequire('electron');
 
 const LoginView = require('./login-view');
 

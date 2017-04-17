@@ -1,8 +1,8 @@
 const { app, BrowserWindow, globalShortcut, ipcMain, session } = require('electron');
-const request = require('request');
 const Q = require('q');
 const path = require('path');
 const url = require('url');
+const getItems = require('./get-items')
 
 let win;
 
@@ -19,14 +19,30 @@ function mainWindow(parentWin) {
 
     win.webContents.openDevTools({ mode: "undocked" });
 
-    win.once('ready-to-show', () => {
+    ipcMain.on('didMount-main', (event, arg) => {
+
         win.show();
+
+    });
+
+     ipcMain.on('getItems', (event, arg) => {
+
+    
+        getItems(arg).then((success)=>{
+
+            console.log(Object.values(success.list));
+
+        }).catch((reason)=>{
+
+            console.log(reason);
+        });
+       
     });
 
     win.on('closed', () => {
 
         win = null;
-        
+
     });
 
     globalShortcut.register('Alt+Q', () => {
@@ -73,7 +89,7 @@ function mainWindow(parentWin) {
 
     });
 
-     parentWin.close();
+    parentWin.close();
 
 }
 

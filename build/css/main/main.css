@@ -115,3 +115,9 @@ p.user {
 button.selected {
   background-color: #b04450;
   color: #c5c5c5; }
+
+.no-margin-left {
+  margin-left: 0; }
+
+.no-padding-left {
+  padding-left: 0; }

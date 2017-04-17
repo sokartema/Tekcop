@@ -1,6 +1,6 @@
 const React = require('react');
 
-const { ipcRenderer } = require('electron');
+const { ipcRenderer } = nodeRequire('electron');
 
 const ErrorMessage = require('./error-message');
 

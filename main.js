@@ -23,7 +23,6 @@ function createWindow() {
     slashes: true
   }));
 
-
   ipcMain.on('didMount', (event, arg) => {
 
     win.show();

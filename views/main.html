@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../build/css/main/main.css">
+    <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports; 
+        delete window.module;
+    </script>
 
 </head>
 
@@ -23,9 +29,9 @@
         </a>
     </div>
 
-    <div class="container">
+    <div class="container no-margin-left">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-xs-1 no-padding-left">
                 <div class="side-menu">
                     <button class="side-menu-button selected"> <i class="fa fa-home fa-fw" aria-hidden="true"></i></button>
                     <button class="side-menu-button"> <i class="fa fa-star fa-fw" aria-hidden="true"></i></button>
@@ -35,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="col-md-10">
+            <div class="col-xs-11">
                 <div id="react-main"></div>
             </div>
         </div>

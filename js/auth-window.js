@@ -1,6 +1,7 @@
-const { app, BrowserWindow, globalShortcut, ipcMain, session } = require('electron');
+const { BrowserWindow } = require('electron');
 const request = require('request');
 const Q = require('q');
+const keytar = require('keytar');
 
 let log;
 
@@ -142,14 +143,11 @@ function authLogin(event, parentWin) {
 
     var d = Q.defer();
 
-    const cookie = { url: 'https://getpocket.com/', username: username, token: token }
-    session.defaultSession.cookies.set(cookie, (error) => {
-      if (error) {
-        console.error(error);
-      } else {
-        d.resolve();
-      }
-    });
+    keytar.setPassword("Tekcop", "access_token" , token);
+    keytar.setPassword("Tekcop", "username" , username);
+
+    d.resolve();
+
 
     return d.promise;
 

@@ -5,6 +5,7 @@ const request = require('request');
 const Q = require('q');
 
 
+
 const authLogin = require('./js/auth-window')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -36,8 +37,6 @@ function createWindow() {
 
   });
 }
-
-
 
 
 

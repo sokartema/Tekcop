@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/nanoscroller/bin/css/nanoscroller.css">
     <link rel="stylesheet" type="text/css" href="../build/css/main/main.css">
     <script>
         window.nodeRequire = require;
@@ -17,7 +18,7 @@
 
 <body>
     <div class="row toolbar">
-        <p class="user"> sokartema </p>
+        <p id="username" class="user"></p>
         <a class="item-close" id="close">
             <i class="fa fa-close" title="Close"></i>
         </a>
@@ -29,7 +30,7 @@
         </a>
     </div>
 
-    <div class="container no-margin-left">
+    <div class="container no-margin-left full-width">
         <div class="row">
             <div class="col-xs-1 no-padding-left">
                 <div class="side-menu">
@@ -42,7 +43,10 @@
             </div>
 
             <div class="col-xs-11">
-                <div id="react-main"></div>
+                <div id="loader" class="container loader full-width"> 
+                    <i class="fa fa-circle-o-notch fa-spin fa-4x fa-fw"></i>
+                </div>
+                <div id="react-main" style="display:none;"></div>
             </div>
         </div>
 
@@ -50,6 +54,7 @@
 
 
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
     <script src="../build/js/main/index.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

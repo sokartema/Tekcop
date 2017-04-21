@@ -29,3 +29,10 @@ $('#minimize').click(()=>{
 
 });
 
+ipcRenderer.send('getUserName', 'getUserName');
+
+
+ipcRenderer.on('getUserName-reply', (event, arg) => {
+    $('#username').text(arg);
+});
+

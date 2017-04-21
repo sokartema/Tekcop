@@ -60,7 +60,9 @@ function getItems(index) {
                 consumer_key: loginConfig.consumer_key,
                 access_token: success,
                 count: index,
-                detailType: "complete"
+                detailType: "complete",
+                state: "all",
+                sort: "newest"
             }
 
 
